@@ -10,7 +10,7 @@
       "title": "Embed Plus",
       "icon": "fa-solid fa-eye",
       "class": "",
-      "hidden": 0
+      "hidden": 1
     },
     "editor": {
       "title": "Editor",
@@ -22,25 +22,25 @@
       "title": "Civilisations",
       "icon": "fa-solid fa-city",
       "class": "",
-      "hidden": 0
+      "hidden": 1
     },
     "commerces": {
       "title": "Commerces",
       "icon": "fa-solid fa-shop",
       "class": "",
-      "hidden": 0
+      "hidden": 1
     },
     "alliances": {
       "title": "Alliances",
       "icon": "fa-solid fa-handshake",
       "class": "",
-      "hidden": 0
+      "hidden": 1
     },
     "religions": {
       "title": "Religions",
       "icon": "fa-solid fa-place-of-worship",
       "class": "",
-      "hidden": 0
+      "hidden": 1
     }
   },
   "buttons": {

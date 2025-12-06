@@ -103,7 +103,7 @@ async function BuildOptions() {
             a.appendChild(span);
             // build button
             if (options_data['options'][key].icon) {
-                i.className = options_data['options'][key].icon;
+                i.className = options_data['options'][key].icon + ' ml-2';
                 a.appendChild(i);
             }
             li.appendChild(a);
@@ -205,4 +205,10 @@ function highlightLayerControl() {
     checkbox.className += ' checkbox checkbox-xs';
     const label = document.querySelector("#map > div.leaflet-control-container > div.leaflet-top.leaflet-right > div > section > div.leaflet-control-layers-overlays > label > span");
     label.className += ' flex items-center gap-2';
+}
+
+function highlightLayerControlEmbed() {
+    // Sélectionne tous les éléments avec la classe 'leaflet-control-layers'
+    const layer = document.querySelector("#map > div.leaflet-control-container > div.leaflet-top.leaflet-right > div");
+    layer.computedStyleMap.display = 'none';
 }

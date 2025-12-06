@@ -44,6 +44,11 @@
     <!-- <script src="assets/scripts/markers.religions.js"></script> -->
     <script src="assets/scripts/embed.minedmap.js"></script>
     <script src="assets/scripts/menu.js"></script>
+    <style>
+      .leaflet-control-layers {
+        display: none;
+      }
+    </style>
   </head>
   <body class="bg-base-100 dark:text-white">
     <!-- Menu Date -->
@@ -52,7 +57,7 @@
     </div>
 
     <!-- Menu Options -->
-    <div class="flex flex-row-reverse items-center flex-wrap gap-2 menu-option" id="Options">
+    <div class="flex flex-row-reverse items-center flex-wrap-reverse gap-2 menu-option" id="Options">
       <!-- Selecteur de Maps -->
       <div class="dropdown dropdown-top dropdown-end" style="display:none;">
         <div tabindex="0" role="button" class="btn bg-base-200 rounded-box rounded-3xl"><i class="fa-solid fa-bars-staggered"></i></div>
@@ -81,7 +86,7 @@
         </ul>
       </div>
       <!-- Options Buttons -->
-      <div class="flex flex-row-reverse gap-2" id="OptionsButtons" style="display:none;"></div>
+      <div class="flex flex-row-reverse flex-wrap-reverse gap-2" id="OptionsButtons" style="display:none;"></div>
     </div>
 
     <!-- Map -->
