@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="robots" content="noindex, nofollow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="French">
+    <title>Carte Embed Plus | Spinelle Galaxie</title>
+		<link rel="shortcut icon" href="//spinelle.eu/images/favicon_red.ico"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/minedmap.css" />
+    <link rel="stylesheet" href="https://css.topazdev.fr/v7/display.css">
+    <link rel="stylesheet" href="https://css.topazdev.fr/v7/colors.css">
+    <link rel="stylesheet" href="https://css.topazdev.fr/v7/bulma.minedmap.css" />
+    
+    <link rel="stylesheet" href="https://css.topazdev.fr/v7/fontawesome/css/all.css">
+    <script defer src="https://css.topazdev.fr/v7/fontawesome/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <link rel="stylesheet" href="leaflet/plugins/leaflet-geoman.css" />
+    <link rel="stylesheet" href="leaflet/plugins/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="leaflet/plugins/leaflet.icon-material.css">
+    
+    <!-- Alertbox -->
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+    <!-- JS -->
+    <script src="leaflet/leaflet.js"></script>
+    <script src="leaflet/plugins/leaflet-geoman.min.js"></script>
+    <script src="leaflet/plugins/leaflet.awesome-markers.js"></script>
+    <script src="leaflet/plugins/leaflet.icon-material.js"></script>
+    
+    <script src="js/functions.js"></script>
+    <script src="js/markers.js"></script>
+    <script src="js/markers.civilisations.js"></script>
+    <script src="js/markers.commerces.js"></script>
+    <script src="js/markers.alliances.js"></script>
+    <script src="js/markers.religions.js"></script>
+    <script src="js/minedmap.js"></script>
+  </head>
+  <body>
+    <!-- Menu Date -->
+    <div class="menu-date flex fd_rowr jc-end bg-smoothwhite">
+      <span class="menu-date" id="maps_date"></span>
+    </div>
+    
+    <!-- Menu -->
+    <div class="menu-div">
+      <div class="flex-end fd-col fw-on" id="Menu"></div>
+    </div>
+
+    <div class="menu-option">
+      <div class="flex-center gap-5">
+        <a class="menu-button-option gap-5 button is-TD-smoothwhite button-apparition" data-target="Options" style="justify-content: start;">
+          <i class="fa-solid fa-gear"></i>
+          <span>Options</span>
+        </a>
+        <div class="flex-center gap-5" id="OptionsButtons"></div>
+      </div>
+    </div>
+
+    <div class="flex fd-colr gap-5 bg-smoothwhite menu-option-div Options" style="display: none;" id="Options">
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- JS -->
+    <script src="js/menu.js"></script>
+    <script type="text/javascript">
+      createMap();
+      BuildDate();
+      BuildMenu();
+      BuildOptions();
+    </script>
+  </body>
+</html>

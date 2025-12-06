@@ -1,0 +1,9 @@
+{
+    "name": "leaflet",
+    "version": "1.9.4",
+    "plugins": [
+        "geoman",
+        "awesome-markers",
+        "icon-material"
+    ]
+}

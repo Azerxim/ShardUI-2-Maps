@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>À propos - ShardUI 2 Maps</title>
+    <link rel="shortcut icon" href="//spinelle.eu/images/favicon_red.ico" />
+
+    <!-- Tailwind CSS & DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/themes.css" rel="stylesheet" type="text/css" />
+
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
+    <script defer src="assets/fontawesome/js/all.js"></script>
+  </head>
+  <body class="bg-base-100 dark:text-white">
+    <!-- Navbar -->
+    <div class="navbar bg-base-200 shadow-lg sticky top-0 z-50">
+      <div class="flex-1">
+        <a href="/maps/" class="btn btn-ghost normal-case text-xl">
+          <i class="fas fa-map mr-2"></i>ShardUI 2 Maps
+        </a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-sm btn-ghost">
+            <i class="fa-solid fa-palette mr-2"></i>Thème
+          </div>
+          <ul tabindex="-1" class="dropdown-content menu bg-base-200 rounded-box rounded-3xl z-1 p-2 m-1 shadow-sm flex-col gap-1">
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('light')"><span>Clair</span><i class="fas fa-sun ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('winter')"><span>Winter</span><i class="fa-solid fa-snowflake ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('lemonade')"><span>Lemonade</span><i class="fa-solid fa-lemon ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('dark')"><span>Sombre</span><i class="fas fa-moon ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('night')"><span>Night</span><i class="fa-solid fa-star ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('dim')"><span>Dim</span><i class="fa-solid fa-eye-slash ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('synthwave')"><span>Synthwave</span><i class="fa-solid fa-music ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('aqua')"><span>Aqua</span><i class="fa-solid fa-water ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('coffee')"><span>Coffee</span><i class="fa-solid fa-mug-hot ml-2"></i></a></li>
+          </ul>
+        </div>
+        <a href="/maps/" class="btn btn-sm btn-ghost">
+          <i class="fa-solid fa-arrow-left mr-2"></i>Retour
+        </a>
+      </div>
+    </div>
+
+	<div class="flex flex-col items-center justify-center gap-20" style="width: 100%; margin: 20px;">
+		<div class="flex flex-row flex-wrap items-center gap-5">
+			<i class="fa-solid fa-triangle-exclamation fa-beat fa-2xl"></i>
+			<h1 class="is-size-1">Erreur</h1>
+		</div>
+		<img src="https://dl.topazdev.fr/stock/draws/undraw/undraw_alert_re_j2op.svg" alt="404 Not Found"/>
+		<h3 class="is-size-4">Page inaccessible</h3>
+	</div>
+
+    <!-- Footer -->
+    <footer
+      class="footer footer-center bg-base-300 text-base-content p-4 mt-12"
+    >
+      <aside>
+        <p>
+          <strong>ShardUI 2 Maps</strong> - Plateforme de cartographie pour
+          Minecraft
+          <br />
+          <small>© <span id="currentYear"></span> - Tous droits réservés</small>
+        </p>
+      </aside>
+    </footer>
+
+    <script>
+		// Year update
+		document.addEventListener("DOMContentLoaded", function () {
+			const yearSpan = document.getElementById("currentYear");
+			if (yearSpan) {
+				yearSpan.textContent = new Date().getFullYear();
+			}
+		});
+
+      // Theme management
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+
+      // Load theme from localStorage or system preference
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          // Use system preference
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          setTheme(prefersDark ? "dark" : "light");
+        }
+      });
+    </script>
+  </body>
+</html>

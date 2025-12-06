@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>À propos - ShardUI 2 Maps</title>
+    <link rel="shortcut icon" href="//spinelle.eu/images/favicon_red.ico" />
+
+    <!-- Tailwind CSS & DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/themes.css" rel="stylesheet" type="text/css" />
+
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
+    <script defer src="assets/fontawesome/js/all.js"></script>
+
+    <style>
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgb(79, 172, 254) 0%,
+          rgb(168, 85, 247) 100%
+        );
+      }
+
+      html[data-theme="dark"] .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgb(30, 58, 138) 0%,
+          rgb(88, 28, 135) 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-base-100 dark:text-white">
+    <!-- Navbar -->
+    <div class="navbar bg-base-200 shadow-lg sticky top-0 z-50">
+      <div class="flex-1">
+        <a href="/maps/" class="btn btn-ghost normal-case text-xl">
+          <i class="fas fa-map mr-2"></i>ShardUI 2 Maps
+        </a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-sm btn-ghost">
+            <i class="fa-solid fa-palette mr-2"></i>Thème
+          </div>
+          <ul tabindex="-1" class="dropdown-content menu bg-base-200 rounded-box rounded-3xl z-1 p-2 m-1 shadow-sm flex-col gap-1">
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('light')"><span>Clair</span><i class="fas fa-sun ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('winter')"><span>Winter</span><i class="fa-solid fa-snowflake ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('lemonade')"><span>Lemonade</span><i class="fa-solid fa-lemon ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('dark')"><span>Sombre</span><i class="fas fa-moon ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('night')"><span>Night</span><i class="fa-solid fa-star ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('dim')"><span>Dim</span><i class="fa-solid fa-eye-slash ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('synthwave')"><span>Synthwave</span><i class="fa-solid fa-music ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('aqua')"><span>Aqua</span><i class="fa-solid fa-water ml-2"></i></a></li>
+            <li><a class="justify-end flex-row gap-2 rounded-box rounded-3xl" onclick="setTheme('coffee')"><span>Coffee</span><i class="fa-solid fa-mug-hot ml-2"></i></a></li>
+          </ul>
+        </div>
+        <a href="/maps/" class="btn btn-sm btn-ghost">
+          <i class="fa-solid fa-arrow-left mr-2"></i>Retour
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero hero-gradient min-h-screen py-12">
+      <div class="hero-content text-center text-white">
+        <div class="max-w-2xl">
+          <h1 class="text-5xl font-bold mb-4">
+            <i class="fa-solid fa-circle-info mr-3"></i>À propos
+          </h1>
+          <p class="text-xl opacity-90 mb-8">
+            Découvrez ShardUI 2 Maps, votre plateforme de cartographie
+            interactive pour vos serveurs Minecraft.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+      <!-- Features Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <!-- Feature 1 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-primary mb-4">
+              <i class="fas fa-map"></i>
+            </div>
+            <h2 class="card-title">Cartographie Interactive</h2>
+            <p>
+              Explorez vos serveurs Minecraft avec des cartes interactives haute
+              résolution et détaillées.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-secondary mb-4">
+              <i class="fas fa-city"></i>
+            </div>
+            <h2 class="card-title">Marqueurs et POIs</h2>
+            <p>
+              Marquez les civilisations, commerces, alliances et religions sur
+              vos cartes personnalisées.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-accent mb-4">
+              <i class="fas fa-pen-to-square"></i>
+            </div>
+            <h2 class="card-title">Éditeur Intégré</h2>
+            <p>
+              Modifiez vos cartes en temps réel avec notre éditeur intégré et
+              nos outils puissants.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-info mb-4">
+              <i class="fas fa-share-nodes"></i>
+            </div>
+            <h2 class="card-title">Partage Facile</h2>
+            <p>
+              Partagez vos cartes avec des liens directs ou des embeds
+              intégrables sur vos sites web.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-warning mb-4">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h2 class="card-title">Thèmes Personnalisés</h2>
+            <p>
+              Personnalisez l'apparence de vos cartes avec plusieurs thèmes et
+              options d'affichage.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="text-4xl text-success mb-4">
+              <i class="fas fa-mobile-screen"></i>
+            </div>
+            <h2 class="card-title">Responsive Design</h2>
+            <p>
+              Accédez à vos cartes sur tous les appareils : ordinateurs,
+              tablettes et smartphones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Section -->
+      <div class="divider"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <!-- About Us -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title text-2xl mb-4">
+              <i class="fas fa-info-circle mr-2"></i>Qu'est-ce que ShardUI 2
+              Maps ?
+            </h2>
+            <p class="mb-4">
+              ShardUI 2 Maps est une plateforme de cartographie dédiée aux
+              serveurs Minecraft. Elle permet aux administrateurs et joueurs de
+              visualiser leurs mondes de manière interactive et intuitive.
+            </p>
+            <p>
+              Basée sur les technologies web modernes (Leaflet, Tailwind CSS,
+              DaisyUI), elle offre une expérience utilisateur fluide et
+              responsive sur tous les appareils.
+            </p>
+          </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title text-2xl mb-4">
+              <i class="fas fa-code mr-2"></i>Technologies Utilisées
+            </h2>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="badge badge-primary">Leaflet</span>
+                <span class="text-sm">Cartographie interactive</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-secondary">Tailwind CSS</span>
+                <span class="text-sm">Styling moderne</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-accent">DaisyUI</span>
+                <span class="text-sm">Composants UI</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-info">FontAwesome</span>
+                <span class="text-sm">Icônes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-warning">PHP/API</span>
+                <span class="text-sm">Backend</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features List -->
+      <div class="card bg-base-200 shadow-xl mb-12">
+        <div class="card-body">
+          <h2 class="card-title text-2xl mb-6">
+            <i class="fas fa-star mr-2"></i>Fonctionnalités Principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">Cartes Haute Résolution</h3>
+                <p class="text-sm opacity-75">
+                  Rendu détaillé de vos mondes Minecraft
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">Système de Marqueurs</h3>
+                <p class="text-sm opacity-75">
+                  Créez et gérez vos points d'intérêt
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">Zoom et Navigation</h3>
+                <p class="text-sm opacity-75">
+                  Explorez chaque détail de votre monde
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">API REST</h3>
+                <p class="text-sm opacity-75">
+                  Intégration facile avec vos services
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">Thème Sombre</h3>
+                <p class="text-sm opacity-75">
+                  Mode sombre pour le confort visuel
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-success text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold">Partage Simplifié</h3>
+                <p class="text-sm opacity-75">
+                  Liens directs et embeds personnalisables
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support Section -->
+      <div
+        class="card bg-gradient-to-r from-primary to-secondary text-primary-content shadow-xl"
+      >
+        <div class="card-body">
+          <h2 class="card-title text-2xl mb-4">
+            <i class="fas fa-question-circle mr-2"></i>Besoin d'Aide ?
+          </h2>
+          <p class="mb-4">
+            Des questions sur ShardUI 2 Maps ? Consultez la documentation ou
+            contactez notre équipe de support.
+          </p>
+          <div class="card-actions justify-end">
+            <a href="/maps/" class="btn btn-neutral">
+              <i class="fas fa-arrow-left mr-2"></i>Retour aux Cartes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="footer footer-center bg-base-300 text-base-content p-4 mt-12"
+    >
+      <aside>
+        <p>
+          <strong>ShardUI 2 Maps</strong> - Plateforme de cartographie pour
+          Minecraft
+          <br />
+          <small>© <span id="currentYear"></span> - Tous droits réservés</small>
+        </p>
+      </aside>
+    </footer>
+
+    <script>
+		// Year update
+		document.addEventListener("DOMContentLoaded", function () {
+			const yearSpan = document.getElementById("currentYear");
+			if (yearSpan) {
+				yearSpan.textContent = new Date().getFullYear();
+			}
+		});
+
+      // Theme management
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+
+      // Load theme from localStorage or system preference
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          // Use system preference
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          setTheme(prefersDark ? "dark" : "light");
+        }
+      });
+    </script>
+  </body>
+</html>
