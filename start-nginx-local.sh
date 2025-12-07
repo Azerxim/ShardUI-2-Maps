@@ -3,7 +3,7 @@
 # Script de démarrage local de nginx (sans sudo, pour développement)
 # Utilise un port alternative si 80 n'est pas disponible
 
-PORT=${1:-8080}
+PORT=3005
 
 echo "=========================================="
 echo "Démarrage local de nginx"
@@ -13,16 +13,15 @@ echo "=========================================="
 NGINX_TEMP="/tmp/nginx-local"
 mkdir -p "$NGINX_TEMP"/{cache,pid,logs}
 
-# Vérifier le port
+# Arrêter les processus existants sur le port
 if lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null 2>&1 ; then
-    echo "⚠ Le port $PORT est déjà utilisé"
-    echo ""
-    echo "Processus utilisant le port $PORT:"
-    lsof -i :$PORT
-    echo ""
-    echo "Utilisation: $0 [PORT]"
-    echo "Exemple: $0 8080"
-    exit 1
+    echo "⚠ Le port $PORT est déjà utilisé, arrêt des processus existants..."
+    PID=$(lsof -Pi :$PORT -sTCP:LISTEN -t)
+    if [ ! -z "$PID" ]; then
+        kill -9 $PID 2>/dev/null
+        sleep 1
+        echo "✓ Processus arrêté"
+    fi
 fi
 
 # Créer la configuration locale avec le bon port
@@ -71,6 +70,85 @@ http {
             try_files \$uri \$uri/ @maps_rewrite;
         }
 
+        # Maps location - rewrite to maps location
+        location /viewer/ {
+            try_files \$uri \$uri/ @viewer_rewrite;
+        }
+
+        location @viewer_rewrite {
+            # About page
+            rewrite ^/viewer/about$ /viewer/about.html break;
+
+            # Embed routes (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embed$ /viewer/embed.html?data=\$1_\$2_\$3 break;
+            # Embed routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embed$ /viewer/embed.html?data=\$1_\$2 break;
+            # Embed routes (1 part)
+            rewrite ^/viewer/([a-z]+?)-embed$ /viewer/embed.html?data=\$1 break;
+
+            # Embedfull routes (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedfull$ /viewer/embedfull.html?data=\$1_\$2_\$3 break;
+            # Embedfull routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embedfull$ /viewer/embedfull.html?data=\$1_\$2 break;
+            # Embedfull routes (1 part)
+            rewrite ^/viewer/([a-z]+?)-embedfull$ /viewer/embedfull.html?data=\$1 break;
+
+            # Embedplus routes (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedplus$ /viewer/embedplus.html?data=\$1_\$2_\$3 break;
+            # Embedplus routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embedplus$ /viewer/embedplus.html?data=\$1_\$2 break;
+            # Embedplus routes (1 part)
+            rewrite ^/viewer/([a-z]+?)-embedplus$ /viewer/embedplus.html?data=\$1 break;
+
+            # Editor routes (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-editor$ /viewer/editor.html?data=\$1_\$2_\$3 break;
+            # Editor routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-editor$ /viewer/editor.html?data=\$1_\$2 break;
+            # Editor routes (1 part)
+            rewrite ^/viewer/([a-z]+?)-editor$ /viewer/editor.html?data=\$1 break;
+
+            # Embed with options (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embed-([a-z_]+?)$ /viewer/embed.html?data=\$1_\$2_\$3 break;
+            # Embed with options (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embed-([a-z_]+?)$ /viewer/embed.html?data=\$1_\$2 break;
+            # Embed with options (1 part)
+            rewrite ^/viewer/([a-z]+?)-embed-([a-z_]+?)$ /viewer/embed.html?data=\$1 break;
+            # Embedfull with options (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedfull-([a-z_]+?)$ /viewer/embedfull.html?data=\$1_\$2_\$3 break;
+            # Embedfull with options (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embedfull-([a-z_]+?)$ /viewer/embedfull.html?data=\$1_\$2 break;
+            # Embedfull with options (1 part)
+            rewrite ^/viewer/([a-z]+?)-embedfull-([a-z_]+?)$ /viewer/embedfull.html?data=\$1 break;
+            # Embedplus with options (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedplus-([a-z_]+?)$ /viewer/embedplus.html?data=\$1_\$2_\$3 break;
+            # Embedplus with options (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-embedplus-([a-z_]+?)$ /viewer/embedplus.html?data=\$1_\$2 break;
+            # Embedplus with options (1 part)
+            rewrite ^/viewer/([a-z]+?)-embedplus-([a-z_]+?)$ /viewer/embedplus.html?data=\$1 break;
+
+            # Editor with options (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-editor-([a-z_]+?)$ /viewer/editor.html?data=\$1_\$2_\$3 break;
+            # Editor with options (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-editor-([a-z_]+?)$ /viewer/editor.html?data=\$1_\$2 break;
+            # Editor with options (1 part)
+            rewrite ^/viewer/([a-z]+?)-editor-([a-z_]+?)$ /viewer/editor.html?data=\$1 break;
+            # Options routes (with options parameter) (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-([a-z_]+?)$ /viewer/index.html?data=\$1_\$2_\$3 break;
+            # Options routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)-([a-z_]+?)$ /viewer/index.html?data=\$1_\$2 break;
+            # Options routes (1 part)
+            rewrite ^/viewer/([a-z]+?)-([a-z]+?)$ /viewer/index.html?data=\$1 break;
+
+            # Carte routes (simple names) (3 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)$ /viewer/index.html?data=\$1_\$2_\$3 break;
+            # Carte routes (2 parts)
+            rewrite ^/viewer/([a-z_]+?)_([a-z_]+?)$ /viewer/index.html?data=\$1_\$2 break;
+            # Carte routes (1 part)
+            rewrite ^/viewer/([a-z]+?)$ /viewer/index.html?data=\$1 break;
+            # Default fallback
+            rewrite ^ /viewer/index.html break;
+        }
+
         location @maps_rewrite {
             # About page
             rewrite ^/maps/about$ /maps/about.html break;
@@ -81,6 +159,13 @@ http {
             rewrite ^/maps/([a-z_]+?)_([a-z_]+?)-embed$ /maps/embed.html?data=\$1_\$2 break;
             # Embed routes (1 part)
             rewrite ^/maps/([a-z]+?)-embed$ /maps/embed.html?data=\$1 break;
+
+            # Embedfull routes (3 parts)
+            rewrite ^/maps/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedfull$ /maps/embedfull.html?data=\$1_\$2_\$3 break;
+            # Embedfull routes (2 parts)
+            rewrite ^/maps/([a-z_]+?)_([a-z_]+?)-embedfull$ /maps/embedfull.html?data=\$1_\$2 break;
+            # Embedfull routes (1 part)
+            rewrite ^/maps/([a-z]+?)-embedfull$ /maps/embedfull.html?data=\$1 break;
 
             # Embedplus routes (3 parts)
             rewrite ^/maps/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedplus$ /maps/embedplus.html?data=\$1_\$2_\$3 break;
@@ -102,6 +187,13 @@ http {
             rewrite ^/maps/([a-z_]+?)_([a-z_]+?)-embed-([a-z_]+?)$ /maps/embed.html?data=\$1_\$2 break;
             # Embed with options (1 part)
             rewrite ^/maps/([a-z]+?)-embed-([a-z_]+?)$ /maps/embed.html?data=\$1 break;
+
+            # Embedfull with options (3 parts)
+            rewrite ^/maps/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedfull-([a-z_]+?)$ /maps/embedfull.html?data=\$1_\$2_\$3 break;
+            # Embedfull with options (2 parts)
+            rewrite ^/maps/([a-z_]+?)_([a-z_]+?)-embedfull-([a-z_]+?)$ /maps/embedfull.html?data=\$1_\$2 break;
+            # Embedfull with options (1 part)
+            rewrite ^/maps/([a-z]+?)-embedfull-([a-z_]+?)$ /maps/embedfull.html?data=\$1 break;
 
             # Embedplus with options (3 parts)
             rewrite ^/maps/([a-z_]+?)_([a-z_]+?)_([a-z_]+?)-embedplus-([a-z_]+?)$ /maps/embedplus.html?data=\$1_\$2_\$3 break;

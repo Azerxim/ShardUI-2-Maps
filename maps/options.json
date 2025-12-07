@@ -6,14 +6,14 @@
       "class": "",
       "hidden": 0
     },
-    "embedplus": {
-      "title": "Embed Plus",
+    "embedfull": {
+      "title": "Embed Full",
       "icon": "fa-solid fa-eye",
       "class": "",
       "hidden": 1
     },
     "editor": {
-      "title": "Editor",
+      "title": "Editeur",
       "icon": "fa-solid fa-pen-to-square",
       "class": "",
       "hidden": 0
@@ -46,7 +46,7 @@
   "buttons": {
     "about": {
       "href": "/maps/about",
-      "title": "À propos",
+      "title": "",
       "icon": "fa-solid fa-circle-info",
       "class": "",
       "target": "",
@@ -66,7 +66,7 @@
       "icon": "fa-solid fa-map",
       "class": "",
       "target": "_blank",
-      "hidden": 1
+      "hidden": 0
     },
     "github": {
       "href": "https://github.com/Azerxim/ShardUI-2-Maps",
@@ -74,7 +74,7 @@
       "icon": "fa-brands fa-github",
       "class": "",
       "target": "_blank",
-      "hidden": 0
+      "hidden": 1
     }
   }
 }

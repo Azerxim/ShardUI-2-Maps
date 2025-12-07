@@ -185,10 +185,99 @@
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiM1YjViNWI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDoyLjVweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlRleHQ8L3RpdGxlPjxnIGlkPSJFYmVuZV8yIiBkYXRhLW5hbWU9IkViZW5lIDIiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMTkuNjQgNy4yNyAxOS42NCA0IDEyIDQgMTIgMjAgMTUuOTEgMjAgOC4wOSAyMCAxMiAyMCAxMiA0IDQuMzYgNCA0LjM2IDcuMjciLz48L2c+PC9zdmc+);
 }
 
+/* for data-theme values: 
+dark
+night
+dim
+synthwave
+aqua
+coffee */
+
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="dark"] .leaflet-pm-toolbar .leaflet-pm-icon-text,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="night"] .leaflet-pm-toolbar .leaflet-pm-icon-text,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="dim"] .leaflet-pm-toolbar .leaflet-pm-icon-text,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="synthwave"] .leaflet-pm-toolbar .leaflet-pm-icon-text,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="aqua"] .leaflet-pm-toolbar .leaflet-pm-icon-text,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-marker,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-polygon,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-polyline,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-circle,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-circle-marker,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-rectangle,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-delete,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-edit,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-drag,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-cut,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-snapping,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-rotate,
+html[data-theme="coffee"] .leaflet-pm-toolbar .leaflet-pm-icon-text {
+  filter: invert(1);
+}
+
 .leaflet-buttons-control-button:hover,
 .leaflet-buttons-control-button:focus {
   cursor: pointer;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
 .active > .leaflet-buttons-control-button {
   box-shadow: inset 0 -1px 5px 2px rgba(81, 77, 77, 0.31);
@@ -281,4 +370,3 @@
 .leaflet-buttons-control-button.pm-disabled > .control-icon {
   filter: opacity(0.6);
 }
-
