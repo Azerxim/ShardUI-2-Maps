@@ -58,7 +58,7 @@
       "icon": "fa-solid fa-home",
       "class": "",
       "target": "",
-      "hidden": 0
+      "hidden": 1
     },
     "livemap": {
       "href": "https://map.mbu.spinelle.eu",
@@ -74,7 +74,7 @@
       "icon": "fa-brands fa-github",
       "class": "",
       "target": "_blank",
-      "hidden": 1
+      "hidden": 0
     }
   }
 }
