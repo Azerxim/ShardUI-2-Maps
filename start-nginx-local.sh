@@ -3,6 +3,7 @@
 # Script de démarrage local de nginx (sans sudo, pour développement)
 # Utilise un port alternative si 80 n'est pas disponible
 
+HOST=0.0.0.0
 PORT=3005
 
 echo "=========================================="
@@ -48,12 +49,15 @@ http {
     client_max_body_size 100M;
 
     server {
-        listen $PORT;
+        listen $HOST:$PORT;
         server_name _;
         root /home/azerxim/Documents/ShardUI-2-Maps;
 
         # Index files
         index index.html;
+
+        # Autoriser l'accès aux répertoires
+        autoindex off;
 
         # Gzip compression
         gzip on;
@@ -62,7 +66,7 @@ http {
 
         # Serve files and directories that exist
         location / {
-            try_files \$uri \$uri/ @rewrite;
+            try_files \$uri \$uri/ /maps/index.html;
         }
 
         # Maps location - rewrite to maps location
@@ -319,7 +323,7 @@ http {
 }
 EOF
 
-echo "✓ Démarrage sur le port $PORT"
+echo "✓ Démarrage sur $HOST:$PORT"
 echo "✓ Racine: /home/azerxim/Documents/ShardUI-2-Maps"
 echo ""
 echo "Accédez à: http://localhost:$PORT"
