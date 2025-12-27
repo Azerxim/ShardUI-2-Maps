@@ -45,7 +45,7 @@
   },
   "buttons": {
     "about": {
-      "href": "/maps/about",
+      "href": "/about",
       "title": "",
       "icon": "fa-solid fa-circle-info",
       "class": "",
@@ -53,12 +53,12 @@
       "hidden": 0
     },
     "retour": {
-      "href": "/rp",
+      "href": "https://amethyst.spinelle.eu",
       "title": "Role Play",
       "icon": "fa-solid fa-home",
       "class": "",
       "target": "",
-      "hidden": 1
+      "hidden": 0
     },
     "livemap": {
       "href": "https://map.mbu.spinelle.eu",
@@ -66,7 +66,7 @@
       "icon": "fa-solid fa-map",
       "class": "",
       "target": "_blank",
-      "hidden": 0
+      "hidden": 1
     },
     "github": {
       "href": "https://github.com/Azerxim/ShardUI-2-Maps",
